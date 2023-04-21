@@ -35,16 +35,9 @@ export default function Home() {
         <Image
           src={background}
           alt="img_background"
-          className="hidden md:block w-full h-screen"
+          className="xl:w-full xl:h-screen bg-auto"
           width={1000}
           height={1000}
-        />
-        <Image
-          src={backgroundMobile}
-          alt="img_background"
-          className="block md:hidden"
-          width={300}
-          height={300}
         />
         <div className="w-full h-screen flex flex-col items-certer absolute z-10 bg-stone-950/20 ">
           <nav className="w-full p-5">
