@@ -18,4 +18,13 @@ router.get("/gpt/:prompt", async (req, res) => {
   res.json({ status: 200, response: responseGPT });
 });
 
+router.post("/gpt/", async (req, res) => {
+  // recupero dados que o client mandou
+  const { prompt } = req.body;
+  // Mandando para gpt
+  const responseGPT = await createNewQuery(prompt);
+  // mandando para client
+  res.json({ status: 200, response: responseGPT });
+});
+
 export default router;
