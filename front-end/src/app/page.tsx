@@ -6,7 +6,7 @@ import { Inter } from "next/font/google";
 import { AppDropdown } from "@/components/AppDropdown";
 import { responseApi } from "@/interface/globalInterfaces";
 import { useEffect, useState } from "react";
-import { createMessage } from "@/service/service";
+import { CreateMessage } from "@/service/service";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,14 +18,14 @@ export default function Home() {
   }, []);
 
   const handler = async () => {
-    const responseGPT = await createMessage("motivação");
+    const responseGPT = await CreateMessage("motivação");
 
     setResponse(JSON.parse(responseGPT));
   };
 
   const onSubmit = async (event: any) => {
     event.preventDefault();
-    const responseGPT = await createMessage(event.target[0].value);
+    const responseGPT = await CreateMessage(event.target[0].value);
 
     setResponse(JSON.parse(responseGPT));
   };

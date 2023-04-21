@@ -1,14 +1,14 @@
-import useApi from "@/components/useApi";
+import useApi from "@/components/hooks/useApi";
 
 interface Result {
   status: number;
   response: any;
 }
 
-const createMessage = async (prompt: string): Promise<any> => {
+const CreateMessage = async (prompt: string): Promise<any> => {
   const { getApi } = useApi();
 
-  const result: Result = await getApi("http://localhost:3001/gpt", {
+  const result: Result = await getApi(process.env.URL_API + "/gpt", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -21,4 +21,4 @@ const createMessage = async (prompt: string): Promise<any> => {
   return result.response;
 };
 
-export { createMessage };
+export { CreateMessage };

@@ -1,7 +1,5 @@
 "use client";
 
-import { createMessage } from "@/service/service";
-
 export function AppDropdown() {
   return (
     <div className="flex gap-x-2">

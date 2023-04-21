@@ -1,10 +1,15 @@
-#PASSOS
-##ter node
+#used local
 
 npm init -y
 
-npm i typescript tsx express body-parser cors
+npm i typescript tsx express body-parser cors @types/express @types/node @types/cors openai dotenv
 
-npm i @types/express @types/node @types/cors
+#used sintax
 
-npm i openai dotenv
+POST url /gpt
+
+Content-Type: application/json
+
+{
+"prompt": "theme phrase"
+}
