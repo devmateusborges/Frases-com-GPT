@@ -2,14 +2,12 @@
 
 npm init -y
 
-npm i typescript tsx express body-parser cors @types/express @types/node @types/cors openai dotenv
+npm i typescript tsx express body-parser cors @types/express @types/node @types/cors openai dotenv @types/express @types/node @types/cors
 
 #used sintax
 
-POST url /gpt
+###
 
-npm i @types/express @types/node @types/cors
+GET http://localhost:3001/gpt/>>> EXEMPLE (amor, carinho, paz, saude, aniversario)
 
-{
-"prompt": "theme phrase"
-}
+###

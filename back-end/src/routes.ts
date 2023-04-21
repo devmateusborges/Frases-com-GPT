@@ -9,9 +9,9 @@ router.get("/", (req, res) => {
 });
 //POST
 
-router.post("/gpt", async (req, res) => {
+router.get("/gpt/:prompt", async (req, res) => {
   // recupero dados que o client mandou
-  const { prompt } = req.body;
+  const { prompt } = req.params;
   // Mandando para gpt
   const responseGPT = await createNewQuery(prompt);
   // mandando para client
