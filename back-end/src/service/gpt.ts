@@ -37,3 +37,15 @@ export async function createNewQuery(prompt: string): Promise<string> {
 
   return String(responseIA.data.choices[0].text);
 }
+
+export async function gptImageModel(image: string) {
+  const openai = new OpenAIApi(configuration);
+
+  const response = await openai.createImage({
+    prompt: image,
+    n: 5,
+    size: "1024x1024",
+  });
+
+  return response.data.data;
+}

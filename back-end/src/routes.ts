@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { createNewQuery } from "./service/gpt";
+import { createNewQuery, gptImageModel } from "./service/gpt";
 
 const router = Router();
 
@@ -24,6 +24,14 @@ router.post("/gpt/", async (req, res) => {
   // Mandando para gpt
   const responseGPT = await createNewQuery(prompt);
   // mandando para client
+  res.json({ status: 200, response: responseGPT });
+});
+
+router.get("/image/:image", async (req, res) => {
+  // recupero dados que o client mandou
+  const { image } = req.params;
+  // Mandando para gpt
+  const responseGPT = await gptImageModel(image); // mandando para client
   res.json({ status: 200, response: responseGPT });
 });
 
